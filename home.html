@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vine Montessori School</title>
+
+    <style>
+
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(15px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes autoScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+            .welcome-text {
+                animation: fadeUp 1s ease forwards;
+            }
+
+            header h1 {
+                animation: fadeUp 1s ease forwards;
+                animation-delay: 0.3s;
+            }
+
+            .tagline {
+                animation: fadeUp 1s ease forwards;
+                animation-delay: 0.6s;
+            }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+       
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            margin-top: 12px;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .main-header {
+        background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+        color: white;
+        padding: 35px 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;              /* reduced gap */
+        }
+
+        .logo-area img {
+            width: 110px;   /* bigger logo */
+            height: auto;
+        }
+
+
+        .header-text {
+        flex: 1;
+        }
+
+        .welcome-text,
+        .tagline {
+        text-align: center;
+        }
+
+
+        /* Section */
+
+        section {
+            overflow: hidden;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #9b1c1c;
+        }
+
+        /* Grid */
+            .class-grid {
+                display: flex;
+                gap: 25px;
+                width: max-content;
+                animation: autoScroll 25s linear infinite;
+        }
+
+        section:hover .class-grid {
+            animation-play-state: paused;
+}
+
+        .class-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .class-grid::-webkit-scrollbar-thumb {
+            background: rgba(155, 28, 28, 0.4);
+            border-radius: 10px;
+        }
+
+        .class-card {
+    min-width: 260px;
+    background: white;
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    cursor: pointer;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.class-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+
+        .class-card h3 {
+            margin: 0;
+            color: #9b1c1c;
+            font-size: 1.4rem;
+        }
+
+        .class-card p {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .class-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .class-link:hover .class-card {
+             outline: 2px solid rgba(155, 28, 28, 0.4);
+}
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #9b1c1c;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .class-icon {
+    width: 70px;
+    height: 70px;
+    background: #fde8e8;
+    color: #9b1c1c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 15px;
+}
+
+
+    .class-link:nth-child(1) .class-card { animation-delay: 0.2s; }
+    .class-link:nth-child(2) .class-card { animation-delay: 0.4s; }
+    .class-link:nth-child(3) .class-card { animation-delay: 0.6s; }
+    .class-link:nth-child(4) .class-card { animation-delay: 0.8s; }
+    .class-link:nth-child(5) .class-card { animation-delay: 1s; }
+
+        /* Mobile tweaks */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .welcome-text {
+                font-size: 1rem;
+            }
+
+            .tagline {
+                font-size: 0.95rem;
+        }
+            .main-header {
+                flex-direction: column;
+        }
+
+            .logo-area img {
+        width: 90px;
+    }
+            }
+
+
+/* Full-width Student Carousel */
+/* Full-width Student Carousel */
+.student-carousel {
+    width: 100%;
+    max-width: 1400px;
+    height: 500px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.student-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: slideImages 40s infinite;
+}
+
+.student-carousel img:nth-child(1)  { animation-delay: 0s; }
+.student-carousel img:nth-child(2)  { animation-delay: 4s; }
+.student-carousel img:nth-child(3)  { animation-delay: 8s; }
+.student-carousel img:nth-child(4)  { animation-delay: 12s; }
+.student-carousel img:nth-child(5)  { animation-delay: 16s; }
+.student-carousel img:nth-child(6)  { animation-delay: 20s; }
+.student-carousel img:nth-child(7)  { animation-delay: 24s; }
+.student-carousel img:nth-child(8)  { animation-delay: 28s; }
+.student-carousel img:nth-child(9)  { animation-delay: 32s; }
+.student-carousel img:nth-child(10) { animation-delay: 36s; }
+
+
+@keyframes slideImages {
+    0%   { opacity: 0; transform: scale(1.08); }
+    5%   { opacity: 1; transform: scale(1); }
+    25%  { opacity: 1; transform: scale(1); }
+    30%  { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 0; }
+}
+
+
+
+        /* Mobile tweaks */
+        @media (max-width: 480px) {
+            .student-card {
+                width: 100%;
+            }
+            .student-card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="pictures/logo.png" alt="The Vine Montessori Logo">
+        </div>
+    
+        <div class="header-text">
+            <p class="welcome-text">Welcome to</p>
+            <h1>The Vine Montessori Nursery & Primary School</h1>
+            <p class="tagline">…where every child is different and celebrated!</p>
+        </div>
+    </header>
+    
+
+<section>
+    <h2>Our Primary Classes</h2>
+
+    <div class="class-grid">
+
+        <a href="basic1.html" class="class-link">
+        <div class="class-card">
+            <div class="class-icon">📘</div>
+            <h3>Basic One Faith</h3>
+            <p>Foundation of learning and creativity</p>
+        </div>
+    </a>
+
+    <a href="basic2.html" class="class-link">
+        <div class="class-card">
+            <div class="class-icon">✏️</div>
+            <h3>Basic Two Honour</h3>
+            <p>Growing Confidence and Curiousity</p>
+        </div>
+    </a>
+        
+    <a href="basic3.html" class="class-link">
+        <div class="class-card">
+            <div class="class-icon">🎨</div>
+            <h3>Basic Three Glory</h3>
+            <p>Exploring Ideas and Team Work</p>
+        </div>
+    </a>
+
+    <a href="basic4.html" class="class-link">
+        <div class="class-card">
+            <div class="class-icon">🧠</div>
+            <h3>Basic Four Grace</h3>
+            <p>Developing critical thinking</p>
+        </div>
+    </a>
+
+    <a href="basic5.html" class="class-link">
+
+        <div class="class-card">
+            <div class="class-icon">🌟</div>
+            <h3>Basic Five Praise</h3>
+            <p>Preparing for leadership and excellence</p>
+        </div>
+        </a>
+
+        <!-- SECOND SET (COPY FOR LOOP EFFECT) -->
+        <a href="basic1.html" class="class-link">
+            <div class="class-card">
+                <div class="class-icon">📘</div>
+                <h3>Basic One Faith</h3>
+                <p>Foundation of learning and creativity</p>
+            </div>
+        </a>
+    
+        <a href="basic2.html" class="class-link">
+            <div class="class-card">
+                <div class="class-icon">✏️</div>
+                <h3>Basic Two Honour</h3>
+                <p>Growing Confidence and Curiosity
+                </p>
+            </div>
+        </a>
+            
+        <a href="basic3.html" class="class-link">
+            <div class="class-card">
+                <div class="class-icon">🎨</div>
+                <h3>Basic Three Glory</h3>
+                <p>Exploring Ideas and Team Work</p>
+            </div>
+        </a>
+    
+        <a href="basic4.html" class="class-link">
+            <div class="class-card">
+                <div class="class-icon">🧠</div>
+                <h3>Basic Four Grace</h3>
+                <p>Developing critical thinking</p>
+            </div>
+        </a>
+    
+        <a href="basic5.html" class="class-link">
+    
+            <div class="class-card">
+                <div class="class-icon">🌟</div>
+                <h3>Basic Five Praise</h3>
+                <p>Preparing for leadership and excellence</p>
+            </div>
+            </a>
+    </div>
+</section>
+<section class="students-section">
+    <h2>Our Amazing Students</h2>
+  
+    <div class="student-carousel">
+      <div class="slides">
+        <img src="pictures/s1.jpg">
+        <img src="pictures/s2.jpg">
+        <img src="pictures/s3.jpg">
+        <img src="pictures/s4.jpg">
+        <img src="pictures/s5.jpg">
+        <img src="pictures/s6.jpg">
+        <img src="pictures/s7.jpg">
+        <img src="pictures/s8.jpg">
+        <img src="pictures/s9.jpg">
+        <img src="pictures/s10.jpg">
+      </div>
+    </div>
+  </section>
+  
+
+
+<footer>
+    © 2026 The Vine Montessori School | 🎓 34, Femi Bangebalu Street Command Road, Ipaja, Lagos Nigeria
+</footer>
+
+</body>
+</html>
