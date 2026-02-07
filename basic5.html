@@ -79,6 +79,9 @@ section {
     overflow: hidden;
 }
 
+        .header-text {
+            flex: 1;
+        }
         .welcome-text,
         .tagline {
             text-align: center;
@@ -232,6 +235,21 @@ section:hover .student-grid {
             section h2 {
                 font-size: 1.5rem;
             }
+
+            .welcome-text {
+                font-size: 1rem;
+            }
+
+            .tagline {
+                font-size: 0.95rem;
+            }
+            .main-header {
+                flex-direction: column;
+            }
+
+            .logo-area img {
+                width: 90px;
+            }
         }
     </style>
 </head>
@@ -242,9 +260,11 @@ section:hover .student-grid {
     <div class="logo-area">
         <img src="pictures/logo.png" alt="The Vine Montessori Logo">
     </div>
+    <div class="header-text">
     <p class="welcome-text">Basic Five</p>
     <h1>The Vine Montessori Nursery & Primary School</h1>
     <p class="tagline">...Where every child is different and celebrated!🌸</p>
+    </div>
 </header>
 
 <section>
