@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic One | The Vine Montessori School</title>
+    <title>Basic Four | The Vine Montessori School</title>
 
     <style>
         body {
@@ -21,6 +21,15 @@
             padding: 50px 20px;
         }
 
+        .main-header {
+            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+            color: white;
+            padding: 35px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;              /* reduced gap */
+        }
+
         .welcome-text {
             font-size: 1rem;
             letter-spacing: 2px;
@@ -31,6 +40,11 @@
         header h1 {
             margin: 10px 0;
             font-size: 2.2rem;
+        }
+
+        .logo-area img {
+            width: 110px;   /* bigger logo */
+            height: auto;
         }
 
         header p {
@@ -102,6 +116,21 @@ section:hover .student-grid {
     object-fit: cover;
     transition: transform 0.4s ease;
 }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .welcome-text,
+        .tagline {
+            text-align: center;
+        }
+        .tagline {
+            font-size: 1.05rem;
+            margin-top: 12px;
+            opacity: 0.95;
+            font-style: italic;
+        }
 
 .student-card:hover .student-photo img {
     transform: scale(1.08);
@@ -195,10 +224,15 @@ section:hover .student-grid {
 
 <body>
 
-<header>
+<header class="main-header">
+    <div class="logo-area">
+        <img src="pictures/logo.png" alt="The Vine Montessori Logo">
+    </div>
+    <div class="header-text">
     <p class="welcome-text">Basic Four</p>
     <h1>The Vine Montessori Nursery & Primary School</h1>
-    <p>...Where every child is different and celebrated!🌸</p>
+    <p class="tagline">...Where every child is different and celebrated!🌸</p>
+    </div>
 </header>
 
 <section>
