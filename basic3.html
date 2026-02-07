@@ -68,7 +68,25 @@ section {
 section:hover .student-grid {
     animation-play-state: paused;
 }
+        .logo-area img {
+            width: 110px;   /* bigger logo */
+            height: auto;
+        }
 
+        .header-text {
+            flex: 1;
+        }
+
+        .welcome-text,
+        .tagline {
+            text-align: center;
+        }
+        .tagline {
+            font-size: 1.05rem;
+            margin-top: 12px;
+            opacity: 0.95;
+            font-style: italic;
+        }
 
 .student-card {
     min-width: 260px;
@@ -80,6 +98,14 @@ section:hover .student-grid {
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+        .main-header {
+            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+            color: white;
+            padding: 35px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;              /* reduced gap */
+        }
 
 .student-card:hover {
     transform: translateY(-10px) scale(1.03);
