@@ -104,7 +104,9 @@ section:hover .student-grid {
             padding: 35px 30px;
             display: flex;
             align-items: center;
-            gap: 10px;              /* reduced gap */
+            gap: 10px;
+            position: relative; /* reduced gap */
+            overflow: hidden;
         }
 
 .student-card:hover {
@@ -206,10 +208,14 @@ section:hover .student-grid {
 }
         /* Floating decorations */
         .floating{
-            position:absolute;
-            inset:0;
-            pointer-events:none;
-            overflow:hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* constrain inside header */
+            pointer-events: none;
+            overflow: hidden;
+
         }
 
         .floating span{
