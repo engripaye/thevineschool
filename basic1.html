@@ -320,41 +320,48 @@ section:hover .student-grid {
 
             .main-header{
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                padding: 30px 15px;
+                padding: 25px 15px 35px;
+                gap: 12px;
             }
 
+            /* Logo sits alone at the top */
             .logo-area{
-                order: 1;
-                margin-bottom: 15px;
-            }
-
-            .logo-area img{
-                width: 85px;
                 margin: 0;
             }
 
+            .logo-area img{
+                width: 80px;
+                display: block;
+            }
+
+            /* Header text becomes normal flow */
             .header-text{
                 position: static;
                 transform: none;
                 text-align: center;
-                order: 2;
+                max-width: 100%;
+                padding-top: 8px;
             }
 
             .welcome-text{
-                font-size: 2.1rem;
+                font-size: 2rem;
+                margin-bottom: 4px;
             }
 
             .header-text h1{
-                font-size: 1.4rem;
-                white-space: normal; /* allow wrapping on mobile */
-                line-height: 1.3;
+                font-size: 1.35rem;
+                line-height: 1.35;
+                white-space: normal;
             }
 
             .tagline{
-                font-size: 0.95rem;
+                font-size: 0.9rem;
+                margin-top: 6px;
             }
         }
+
 
     </style>
 </head>
