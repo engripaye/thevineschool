@@ -50,8 +50,10 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            max-width: 700px;
             text-align: center;
         }
+
 
 
         .header-text h1{
@@ -136,13 +138,6 @@ section:hover .student-grid {
     object-fit: cover;
     transition: transform 0.4s ease;
 }
-
-        .header-text{
-            max-width:700px;
-            text-align:left;
-        }
-
-
         .welcome-text,
         .tagline {
         text-align: center;
@@ -320,39 +315,40 @@ section:hover .student-grid {
 
             .main-header{
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
-                padding: 25px 15px 35px;
-                gap: 12px;
+                justify-content: flex-start;
+                padding: 22px 15px 30px;
+                gap: 10px;
             }
 
-            /* Logo sits alone at the top */
+            /* Logo at top, calm */
             .logo-area{
-                margin: 0;
+                order: 1;
             }
 
             .logo-area img{
-                width: 80px;
-                display: block;
+                width: 75px;
+                margin: 0;
             }
 
-            /* Header text becomes normal flow */
+            /* FULL RESET — THIS IS KEY */
             .header-text{
-                position: static;
-                transform: none;
-                text-align: center;
+                position: relative !important;
+                left: auto !important;
+                transform: none !important;
                 max-width: 100%;
-                padding-top: 8px;
+                text-align: center;
+                order: 2;
             }
 
             .welcome-text{
-                font-size: 2rem;
-                margin-bottom: 4px;
+                font-size: 1.9rem;
+                letter-spacing: 2px;
             }
 
             .header-text h1{
-                font-size: 1.35rem;
-                line-height: 1.35;
+                font-size: 1.3rem;
+                line-height: 1.4;
                 white-space: normal;
             }
 
