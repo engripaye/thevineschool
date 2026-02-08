@@ -21,47 +21,11 @@
             padding: 50px 20px;
         }
 
-        .main-header{
-            color:white;
-            padding-left: 30px;
-
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:35px;
-
-            overflow:hidden;
-            position:relative;
-        }
-
-
-        .welcome-text{
-            font-size:3rem;
-            font-weight:900;
-            letter-spacing:3px;
-            text-transform:uppercase;
-            margin:0 0 8px;
-            text-align:left;
-            animation:bounceIn 1.1s ease forwards;
-        }
-
-
-        .header-text{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 700px;
-            text-align: center;
-        }
-
-
-
-        .header-text h1{
-            font-size:2.2rem;
-            font-weight:700;
-            margin:5px 0;
-            animation: fadeSlide 1.3s ease forwards;
-            white-space: nowrap;   /* no line break */
+        .welcome-text {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
         }
 
         header h1 {
@@ -91,90 +55,109 @@
 
         /* Grid */
         .student-grid {
-    display: flex;
-    gap: 25px;
-    width: max-content;
-    animation: studentScroll 25s linear infinite;
-}
+            display: flex;
+            gap: 25px;
+            width: max-content;
+            animation: studentScroll 25s linear infinite;
+        }
 
-section {
-    overflow: hidden;
-}
+        section {
+            overflow: hidden;
+        }
 
-section:hover .student-grid {
-    animation-play-state: paused;
-}
+        section:hover .student-grid {
+            animation-play-state: paused;
+        }
+        .logo-area img {
+            width: 110px;   /* bigger logo */
+            height: auto;
+        }
 
+        .header-text {
+            flex: 1;
+        }
 
-.student-card {
-    min-width: 260px;
-    background: white;
-    border-radius: 14px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+        .welcome-text,
+        .tagline {
+            text-align: center;
+        }
+        .tagline {
+            font-size: 1.05rem;
+            margin-top: 12px;
+            opacity: 0.95;
+            font-style: italic;
+        }
 
+        .student-card {
+            min-width: 260px;
+            background: white;
+            border-radius: 14px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
 
-.student-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 18px 30px rgba(0,0,0,0.18);
-}
+        .main-header {
+            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+            color: white;
+            padding: 35px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative; /* reduced gap */
+            overflow: hidden;
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+        }
 
 
         .student-photo {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.student-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-        .welcome-text,
-        .tagline {
-        text-align: center;
+            position: relative;
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
         }
-        .tagline {
-            font-size:1.15rem;
-            font-style:italic;
-            margin-top:10px;
-            animation: fadeSlide 1.6s ease forwards;
+
+        .student-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
         }
-.student-card:hover .student-photo img {
-    transform: scale(1.08);
-}
 
-.student-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+        .student-card:hover .student-photo img {
+            transform: scale(1.08);
+        }
 
-.student-link:hover .student-card {
-    outline: 2px solid rgba(155, 28, 28, 0.4);
-}
+        .student-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .student-link:hover .student-card {
+            outline: 2px solid rgba(155, 28, 28, 0.4);
+        }
 
 
-/* Name overlay */
-.student-name {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-align: center;
-}
+        /* Name overlay */
+        .student-name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+        }
 
 
         .student-card h3 {
@@ -204,11 +187,6 @@ section:hover .student-grid {
             transform: translateY(-2px);
         }
 
-        .logo-area img {
-            width:120px;
-            animation: logoPop 1.2s ease forwards;
-            margin-left: -20px; /* pushes logo further left */
-        }
 
         /* Footer */
         footer {
@@ -220,17 +198,24 @@ section:hover .student-grid {
             margin-top: 40px;
         }
 
-
-        .logo-area {
-            margin-right: 10px;
+        @keyframes studentScroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
         }
-
         /* Floating decorations */
         .floating{
-            position:absolute;
-            inset:0;
-            pointer-events:none;
-            overflow:hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* constrain inside header */
+            pointer-events: none;
+            overflow: hidden;
+
         }
 
         .floating span{
@@ -264,120 +249,32 @@ section:hover .student-grid {
             }
         }
 
-        @keyframes studentScroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-        @keyframes bounceIn{
-            0%{
-                opacity:0;
-                transform:translateY(-30px) scale(0.9);
-            }
-            60%{
-                opacity:1;
-                transform:translateY(10px) scale(1.05);
-            }
-            100%{
-                transform:translateY(0) scale(1);
-            }
-        }
-
-        @keyframes fadeSlide{
-            from{
-                opacity:0;
-                transform:translateY(25px);
-            }
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-        }
-
-        @keyframes logoPop{
-            from{
-                opacity:0;
-                transform:scale(0.6);
-            }
-            to{
-                opacity:1;
-                transform:scale(1);
-            }
-        }
-
 
         /* Mobile */
         @media (max-width: 480px) {
-
-            /* Make header vertical and centered */
-            .main-header {
-                display: flex;
-                flex-direction: column; /* stack logo on top */
-                align-items: center;
-                justify-content: center;
-                padding: 20px 15px 30px;
-                gap: 12px;
+            header h1 {
+                font-size: 1.8rem;
             }
 
-            /* Logo on top, centered */
-            .logo-area {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin-bottom: 12px;
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .welcome-text {
+                font-size: 1rem;
+            }
+
+            .tagline {
+                font-size: 0.95rem;
+            }
+            .main-header {
+                flex-direction: column;
             }
 
             .logo-area img {
-                width: 70px;  /* smaller logo for mobile */
-                margin: 0;
-            }
-
-            /* Header text below logo */
-            .header-text {
-                position: static !important;
-                transform: none !important;
-                max-width: 90%; /* prevent overflow */
-                text-align: center;
-            }
-
-            /* Reduce welcome text */
-            .welcome-text {
-                font-size: 1.6rem;
-                letter-spacing: 1.5px;
-                margin-bottom: 4px;
-            }
-
-            /* Reduce main h1 to fit mobile */
-            .header-text h1 {
-                font-size: 1.1rem;   /* small enough for mobile */
-                line-height: 1.2;
-                white-space: normal; /* allow wrapping */
-                margin: 0 0 6px;
-            }
-
-            /* Reduce tagline */
-            .tagline {
-                font-size: 0.85rem;
-                margin-top: 4px;
-            }
-
-            /* Hide floating stars on mobile */
-            .floating {
-                display: none;
-            }
-
-            /* Adjust header padding */
-            header {
-                padding: 30px 15px;
+                width: 90px;
             }
         }
-
-
-
     </style>
 </head>
 
