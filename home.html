@@ -114,7 +114,9 @@
         padding: 35px 30px;
         display: flex;
         align-items: center;
-        gap: 10px;              /* reduced gap */
+        gap: 10px; /* reduced gap */
+        position: relative;
+        overflow: hidden;
         }
 
         .logo-area img {
@@ -132,8 +134,54 @@
         text-align: center;
         }
 
+            /* Floating decorations */
+            .floating{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%; /* constrain inside header */
+                pointer-events: none;
+                overflow: hidden;
 
-        /* Section */
+            }
+
+            .floating span{
+                position:absolute;
+                font-size:1.4rem;
+                opacity:0.8;
+                animation: floatUp 8s linear infinite;
+            }
+
+            /* Random positions */
+            .floating span:nth-child(1){ font-size:1.6rem; left:10%; animation-delay:0s; }
+            .floating span:nth-child(2){ font-size:1.3rem; left:25%; animation-delay:2s; }
+            .floating span:nth-child(3){ font-size:1.5rem; left:40%; animation-delay:4s; }
+            .floating span:nth-child(4){ font-size:1.2rem; left:60%; animation-delay:1s; }
+            .floating span:nth-child(5){ font-size:1.7rem; left:75%; animation-delay:3s; }
+            .floating span:nth-child(6){ font-size:1.4rem; left:90%; animation-delay:5s; }
+
+
+            @keyframes floatUp{
+                0%{
+                    bottom:-10%;
+                    transform:translateX(0) scale(0.8);
+                    opacity:0;
+                }
+                20%{
+                    opacity:0.8;
+                }
+                100%{
+                    bottom:110%;
+                    transform:translateX(-20px) scale(1.1);
+                    opacity:0;
+                }
+            }
+
+
+
+
+            /* Section */
 
         section {
             overflow: hidden;
@@ -335,6 +383,17 @@
             <h1>The Vine Montessori Nursery & Primary School</h1>
             <p class="tagline">…Where every child is different and celebrated!🌸</p>
         </div>
+
+        <!-- Floating decorations -->
+        <div class="floating">
+            <span>⭐</span>
+            <span>✨</span>
+            <span>🎓</span>
+            <span>🎈</span>
+            <span>✨</span>
+            <span>⭐</span>
+        </div>
+
     </header>
     
 
