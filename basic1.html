@@ -313,49 +313,61 @@ section:hover .student-grid {
         /* Mobile */
         @media (max-width: 480px) {
 
-            .main-header{
-                flex-direction: column;
+            .main-header {
+                display: flex;
+                flex-direction: column; /* stack vertically */
                 align-items: center;
                 justify-content: flex-start;
-                padding: 22px 15px 30px;
+                padding: 20px 15px 30px;
                 gap: 10px;
             }
 
-            /* Logo at top, calm */
-            .logo-area{
-                order: 1;
+            /* Logo sits fully on top */
+            .logo-area {
+                width: 100%;         /* full width */
+                display: flex;
+                justify-content: center;  /* center logo */
+                margin-bottom: 12px;      /* spacing below */
             }
 
-            .logo-area img{
-                width: 75px;
+            .logo-area img {
+                width: 80px;
                 margin: 0;
             }
 
-            /* FULL RESET — THIS IS KEY */
-            .header-text{
-                position: relative !important;
-                left: auto !important;
+            /* Header text below logo */
+            .header-text {
+                position: static !important;  /* cancel absolute */
                 transform: none !important;
-                max-width: 100%;
                 text-align: center;
-                order: 2;
+                max-width: 100%;
             }
 
-            .welcome-text{
+            .welcome-text {
                 font-size: 1.9rem;
-                letter-spacing: 2px;
+                margin-bottom: 4px;
             }
 
-            .header-text h1{
-                font-size: 1.3rem;
-                line-height: 1.4;
-                white-space: normal;
+            .header-text h1 {
+                font-size: 1.35rem;
+                line-height: 1.3;
+                white-space: normal; /* wrap text */
             }
 
-            .tagline{
+            .tagline {
                 font-size: 0.9rem;
                 margin-top: 6px;
             }
+
+            /* Remove floating stars on mobile to prevent layout conflict */
+            .floating {
+                display: none;
+            }
+
+            header {
+                padding: 40px 15px; /* smaller padding for mobile */
+            }
+
         }
 
 
