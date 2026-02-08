@@ -21,8 +21,17 @@
             padding: 50px 20px;
         }
 
-        .main-header {
-            background: linear-gradient(135deg,#9b1c1c,#e53e3e);
+        .main-header{
+            background: linear-gradient(
+                    270deg,
+                    #9b1c1c,
+                    #e53e3e,
+                    #f56565,
+                    #9b1c1c
+            );
+            background-size: 600% 600%;
+            animation: waveGradient 12s ease infinite;
+
             color:white;
             padding:60px 20px;
             text-align:center;
@@ -30,8 +39,16 @@
             flex-direction:column;
             align-items:center;
             gap:18px;
-            overflow:hidden;           /* reduced gap */
+            overflow:hidden;
+            position:relative;
         }
+
+        @keyframes waveGradient{
+            0%{ background-position:0% 50%; }
+            50%{ background-position:100% 50%; }
+            100%{ background-position:0% 50%; }
+        }
+
 
         .welcome-text {
             font-size:3rem;
@@ -210,6 +227,46 @@ section:hover .student-grid {
             margin-top: 40px;
         }
 
+
+        /* Floating decorations */
+        .floating{
+            position:absolute;
+            inset:0;
+            pointer-events:none;
+            overflow:hidden;
+        }
+
+        .floating span{
+            position:absolute;
+            font-size:1.4rem;
+            opacity:0.8;
+            animation: floatUp 8s linear infinite;
+        }
+
+        /* Random positions */
+        .floating span:nth-child(1){ left:10%; animation-delay:0s; }
+        .floating span:nth-child(2){ left:25%; animation-delay:2s; }
+        .floating span:nth-child(3){ left:40%; animation-delay:4s; }
+        .floating span:nth-child(4){ left:60%; animation-delay:1s; }
+        .floating span:nth-child(5){ left:75%; animation-delay:3s; }
+        .floating span:nth-child(6){ left:90%; animation-delay:5s; }
+
+        @keyframes floatUp{
+            0%{
+                bottom:-10%;
+                transform:translateX(0) scale(0.8);
+                opacity:0;
+            }
+            20%{
+                opacity:0.8;
+            }
+            100%{
+                bottom:110%;
+                transform:translateX(-20px) scale(1.1);
+                opacity:0;
+            }
+        }
+
         @keyframes studentScroll {
     from {
         transform: translateX(0);
@@ -300,6 +357,17 @@ section:hover .student-grid {
     <h1>The Vine Montessori Nursery & Primary School</h1>
     <p class="tagline">...Where every child is different and celebrated!🌸</p>
 </div>
+
+    <!-- Floating decorations -->
+    <div class="floating">
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+        <span>🎈</span>
+        <span>✨</span>
+        <span>⭐</span>
+    </div>
+
 </header>
 
 <section>
