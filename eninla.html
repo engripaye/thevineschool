@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic One | Student Portfolio</title>
+<!-- CSS HERE -->
+<style>
+    *{
+      box-sizing:border-box;
+    }
+    
+    body{
+      margin:0;
+      font-family:"Segoe UI", Arial, sans-serif;
+      background:#f6f6f6;
+      color:#333;
+    }
+    
+    header{
+      background:linear-gradient(135deg,#9b1c1c,#e53e3e);
+      color:#fff;
+      text-align:center;
+      padding:40px 20px;
+    }
+    
+    header h1{
+      margin:10px 0;
+      font-size:2rem;
+    }
+    
+    header p{
+      font-style:italic;
+      opacity:0.95;
+    }
+    
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:30px 20px;
+    }
+    
+    .student-card{
+      background:#fff;
+      border-radius:16px;
+      padding:30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+    
+    .passport{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      border:6px solid #f1caca;
+      margin-bottom:20px;
+    }
+    
+    .student-card h2{
+      color:#9b1c1c;
+      margin-bottom:5px;
+    }
+    
+    .student-card h4{
+      margin-top:0;
+      font-weight:normal;
+      color:#666;
+    }
+    
+    .composition{
+      text-align:left;
+      margin-top:25px;
+      line-height:1.7;
+      font-size:1.05rem;
+    }
+    
+    footer{
+      background:#9b1c1c;
+      color:#fff;
+      text-align:center;
+      padding:15px;
+      margin-top:40px;
+      font-size:0.9rem;
+    }
+    
+    /* Mobile */
+    @media(max-width:480px){
+      header h1{
+        font-size:1.6rem;
+      }
+    
+      .passport{
+        width:130px;
+        height:130px;
+      }
+    
+      .composition{
+        font-size:1rem;
+      }
+    }
+    </style>
+</head>
+
+<body>
+
+<header>
+  <p>Basic One 🌟</p>
+  <h1>The Vine Montessori Nursery & Primary School</h1>
+  <p>Every child is special and loved 💖</p>
+</header>
+
+<div class="container">
+  <div class="student-card">
+    <img src="pictures/eninla.jpg" class="passport" alt="Student Passport">
+
+    <h2>My Name is Daniel</h2>
+    <h4>Basic One Pupil</h4>
+
+    <div class="composition">
+      <p>
+        My name is Daniel. I am in Basic One at The Vine Montessori School.
+        I am six years old and I love coming to school every day.
+      </p>
+
+      <p>
+        My favourite subject is Mathematics because I enjoy counting numbers.
+        I also like drawing, colouring, and singing with my friends.
+      </p>
+
+      <p>
+        I always try to obey my teachers and respect my classmates.
+        I want to become a doctor in the future so I can help people.
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer>
+© 2026 The Vine Montessori School
+</footer>
+
+</body>
+</html>
