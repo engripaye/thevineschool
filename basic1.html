@@ -116,9 +116,9 @@
 
         .student-grid{
             display:flex;
-            gap:20px;
+            gap:14px;
             width:max-content;
-            animation:scrollLeft 30s linear infinite;
+            animation:scrollLeft 40s linear infinite;
         }
 
         .student-grid:hover{
@@ -131,60 +131,39 @@
         }
 
         /* ================= STUDENT CARD ================= */
-        .student-link{
-            text-decoration:none;
-            color:inherit;
-        }
-
+        /* ================= STUDENT CARD ================= */
         .student-card{
-            flex:0 0 clamp(220px,25vw,280px);
+            flex:0 0 180px;   /* Smaller fixed size */
             background:white;
-            border-radius:14px;
-            padding:20px;
+            border-radius:10px;
+            padding:14px;
             text-align:center;
-            box-shadow:0 8px 18px rgba(0,0,0,0.08);
-            transition:0.35s;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);
+            transition:0.3s ease;
         }
 
         .student-card:hover{
-            transform:translateY(-8px);
-            box-shadow:0 15px 28px rgba(0,0,0,0.18);
+            transform:translateY(-5px);
+            box-shadow:0 8px 18px rgba(0,0,0,0.12);
         }
 
+        /* Smaller photo */
         .student-photo{
-            position:relative;   /* FIXED BLACK ISSUE */
             width:100%;
-            aspect-ratio:3/4;
-            border-radius:12px;
+            aspect-ratio:1/1;   /* Square for cleaner look */
+            border-radius:8px;
             overflow:hidden;
-            margin-bottom:12px;
-        }
-
-        .student-photo img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            transition:0.4s;
-        }
-
-        .student-card:hover img{
-            transform:scale(1.05);
+            margin-bottom:10px;
         }
 
         .student-name{
-            position:absolute;
-            bottom:0;
-            width:100%;
-            padding:8px;
-            background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
-            color:white;
-            font-weight:600;
+            font-size:0.8rem;
+            padding:6px;
         }
 
         .student-card h3{
-            margin:0;
-            color:#9b1c1c;
-            font-size:1.1rem;
+            font-size:0.9rem;
+            margin-top:5px;
         }
 
         /* ================= FOOTER ================= */
