@@ -21,11 +21,27 @@
             padding: 50px 20px;
         }
 
+        .main-header {
+            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+            color: white;
+            padding: 35px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;              /* reduced gap */
+            position: relative;
+            overflow: hidden;
+        }
+
         .welcome-text {
             font-size: 1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             opacity: 0.9;
+        }
+
+        .logo-area img {
+            width: 110px;   /* bigger logo */
+            height: auto;
         }
 
         header h1 {
@@ -56,27 +72,18 @@
         /* Grid */
         .student-grid {
             display: flex;
-            gap: 25px;
-            width: max-content;
-            animation: studentScroll 25s linear infinite;
+            justify-content: center;
+            align-items: center;
         }
+
 
         section {
             overflow: hidden;
         }
 
-        section:hover .student-grid {
-            animation-play-state: paused;
-        }
-        .logo-area img {
-            width: 110px;   /* bigger logo */
-            height: auto;
-        }
-
         .header-text {
             flex: 1;
         }
-
         .welcome-text,
         .tagline {
             text-align: center;
@@ -88,26 +95,83 @@
             font-style: italic;
         }
 
+        section:hover .student-grid {
+            animation-play-state: paused;
+        }
+
+
         .student-card {
-            flex: 0 0 220px;   /* Perfect desktop size */
+            min-width: 260px;
             background: white;
             border-radius: 14px;
             padding: 30px 20px;
             text-align: center;
             box-shadow: 0 8px 18px rgba(0,0,0,0.08);
             transition: transform 0.35s ease, box-shadow 0.35s ease;
+            animation: fadeUp 0.9s ease forwards, float 6s ease-in-out infinite;
         }
 
-        .main-header {
-            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
-            color: white;
-            padding: 35px 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative; /* reduced gap */
-            overflow: hidden;
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
+
+        /* Floating decorations */
+        .floating{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* constrain inside header */
+            pointer-events: none;
+            overflow: hidden;
+
+        }
+
+        .floating span{
+            position:absolute;
+            font-size:1.4rem;
+            opacity:0.8;
+            animation: floatUp 8s linear infinite;
+        }
+
+        /* Random positions */
+        .floating span:nth-child(1){ font-size:1.6rem; left:10%; animation-delay:0s; }
+        .floating span:nth-child(2){ font-size:1.3rem; left:25%; animation-delay:2s; }
+        .floating span:nth-child(3){ font-size:1.5rem; left:40%; animation-delay:4s; }
+        .floating span:nth-child(4){ font-size:1.2rem; left:60%; animation-delay:1s; }
+        .floating span:nth-child(5){ font-size:1.7rem; left:75%; animation-delay:3s; }
+        .floating span:nth-child(6){ font-size:1.4rem; left:90%; animation-delay:5s; }
+
+
+        @keyframes floatUp{
+            0%{
+                bottom:-10%;
+                transform:translateX(0) scale(0.8);
+                opacity:0;
+            }
+            20%{
+                opacity:0.8;
+            }
+            100%{
+                bottom:110%;
+                transform:translateX(-20px) scale(1.1);
+                opacity:0;
+            }
+        }
+
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
 
         .student-card:hover {
             transform: translateY(-10px) scale(1.03);
@@ -198,80 +262,39 @@
             margin-top: 40px;
         }
 
-        @keyframes studentScroll {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-50%);
-            }
-        }
-        /* Floating decorations */
-        .floating{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; /* constrain inside header */
-            pointer-events: none;
-            overflow: hidden;
-
-        }
-
-        .floating span{
-            position:absolute;
-            font-size:1.4rem;
-            opacity:0.8;
-            animation: floatUp 8s linear infinite;
-        }
-
-        /* Random positions */
-        .floating span:nth-child(1){ left:10%; animation-delay:0s; }
-        .floating span:nth-child(2){ left:25%; animation-delay:2s; }
-        .floating span:nth-child(3){ left:40%; animation-delay:4s; }
-        .floating span:nth-child(4){ left:60%; animation-delay:1s; }
-        .floating span:nth-child(5){ left:75%; animation-delay:3s; }
-        .floating span:nth-child(6){ left:90%; animation-delay:5s; }
-
-        @keyframes floatUp{
-            0%{
-                bottom:-10%;
-                transform:translateX(0) scale(0.8);
-                opacity:0;
-            }
-            20%{
-                opacity:0.8;
-            }
-            100%{
-                bottom:110%;
-                transform:translateX(-20px) scale(1.1);
-                opacity:0;
-            }
-        }
+        /* @keyframes studentScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+} */
 
 
         /* Mobile */
         @media (max-width: 480px) {
-            .student-grid {
-                gap: 12px;
-                animation-duration: 20s;
+            header h1 {
+                font-size: 1.8rem;
             }
 
-            .student-card {
-                flex: 0 0 140px;   /* smaller and balanced */
-                padding: 15px 10px;
+            section h2 {
+                font-size: 1.5rem;
             }
 
-            .student-photo {
-                height: 110px;
+            .welcome-text {
+                font-size: 1rem;
             }
 
-            .student-name {
-                font-size: 0.85rem;
+            .tagline {
+                font-size: 0.95rem;
+            }
+            .main-header {
+                flex-direction: column;
             }
 
-            .student-card h3 {
-                font-size: 0.9rem;
+            .logo-area img {
+                width: 90px;
             }
         }
     </style>
