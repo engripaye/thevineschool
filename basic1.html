@@ -1,65 +1,231 @@
-the name of the students are not looking good, the pictures are too big both on computer and mobile view, the auto scrolling is very slow please correct well and make it amazing and professional <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic One | The Vine Montessori School</title>
+    <title>Basic Two | The Vine Montessori School</title>
 
     <style>
-        body{
-            margin:0;
-            font-family:"Segoe UI", Arial, sans-serif;
-            background:#f7f5f5;
-            color:#333;
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7f5f5;
+            color: #333;
         }
 
-        /* ================= HEADER ================= */
-        .main-header{
-            background:linear-gradient(135deg,#9b1c1c,#e53e3e);
-            color:white;
-            padding:35px 20px;
-            display:flex;
-            align-items:center;
-            gap:15px;
-            position:relative;
-            overflow:hidden;
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
         }
 
-        .logo-area img{
-            width:110px;
+        .welcome-text {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
         }
 
-        .header-text{
-            flex:1;
-            text-align:center;
+        header h1 {
+            margin: 10px 0;
+            font-size: 2.2rem;
         }
 
-        .welcome-text{
-            font-size:0.95rem;
-            letter-spacing:2px;
-            text-transform:uppercase;
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+            font-style: italic;
         }
 
-        .tagline{
-            font-style:italic;
-            margin-top:8px;
+        /* Section */
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
         }
 
-        /* Floating icons */
+        section h2 {
+            text-align: center;
+            color: #9b1c1c;
+            margin-bottom: 30px;
+            font-size: 1.7rem;
+        }
+
+        /* Grid */
+        .student-grid {
+            display: flex;
+            gap: 25px;
+            width: max-content;
+            animation: studentScroll 25s linear infinite;
+        }
+
+        section {
+            overflow: hidden;
+        }
+
+        section:hover .student-grid {
+            animation-play-state: paused;
+        }
+        .logo-area img {
+            width: 110px;   /* bigger logo */
+            height: auto;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .welcome-text,
+        .tagline {
+            text-align: center;
+        }
+        .tagline {
+            font-size: 1.05rem;
+            margin-top: 12px;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .student-card {
+            min-width: 260px;
+            background: white;
+            border-radius: 14px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
+            color: white;
+            padding: 35px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative; /* reduced gap */
+            overflow: hidden;
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+        }
+
+
+        .student-photo {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .student-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .student-card:hover .student-photo img {
+            transform: scale(1.08);
+        }
+
+        .student-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .student-link:hover .student-card {
+            outline: 2px solid rgba(155, 28, 28, 0.4);
+        }
+
+
+        /* Name overlay */
+        .student-name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+
+        .student-card h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #9b1c1c;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #9b1c1c;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: #7f1515;
+            transform: translateY(-2px);
+        }
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #9b1c1c;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        @keyframes studentScroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        /* Floating decorations */
         .floating{
-            position:absolute;
-            inset:0;
-            pointer-events:none;
-            overflow:hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* constrain inside header */
+            pointer-events: none;
+            overflow: hidden;
+
         }
 
         .floating span{
             position:absolute;
             font-size:1.4rem;
-            opacity:0.7;
-            animation:floatUp 8s linear infinite;
+            opacity:0.8;
+            animation: floatUp 8s linear infinite;
         }
 
+        /* Random positions */
         .floating span:nth-child(1){ left:10%; animation-delay:0s; }
         .floating span:nth-child(2){ left:25%; animation-delay:2s; }
         .floating span:nth-child(3){ left:40%; animation-delay:4s; }
@@ -68,127 +234,45 @@ the name of the students are not looking good, the pictures are too big both on 
         .floating span:nth-child(6){ left:90%; animation-delay:5s; }
 
         @keyframes floatUp{
-            0%{ bottom:-10%; opacity:0; }
-            20%{ opacity:0.8; }
-            100%{ bottom:110%; opacity:0; transform:translateX(-20px); }
+            0%{
+                bottom:-10%;
+                transform:translateX(0) scale(0.8);
+                opacity:0;
+            }
+            20%{
+                opacity:0.8;
+            }
+            100%{
+                bottom:110%;
+                transform:translateX(-20px) scale(1.1);
+                opacity:0;
+            }
         }
 
-        /* ================= SECTION ================= */
-        section{
-            padding:40px 20px;
-            max-width:1200px;
-            margin:auto;
-        }
 
-        section h2{
-            text-align:center;
-            color:#9b1c1c;
-            margin-bottom:30px;
-        }
-
-        /* Back button */
-        .back-home{
-            text-align:center;
-            margin-bottom:20px;
-        }
-
-        .home-btn{
-            display:inline-block;
-            padding:10px 18px;
-            background:#9b1c1c;
-            color:white;
-            text-decoration:none;
-            border-radius:30px;
-            font-size:0.95rem;
-            transition:0.3s;
-        }
-
-        .home-btn:hover{
-            background:#7f1515;
-            transform:translateY(-2px);
-        }
-
-        /* ================= SCROLL AREA ================= */
-        .student-scroll{
-            overflow:hidden;
-            position:relative;
-        }
-
-        .student-grid{
-            display:flex;
-            gap:14px;
-            width:max-content;
-            animation:scrollLeft 40s linear infinite;
-        }
-
-        .student-grid:hover{
-            animation-play-state:paused;
-        }
-
-        @keyframes scrollLeft{
-            from{ transform:translateX(0); }
-            to{ transform:translateX(-50%); }
-        }
-
-        /* ================= STUDENT CARD ================= */
-        /* ================= STUDENT CARD ================= */
-        .student-card{
-            flex:0 0 180px;   /* Smaller fixed size */
-            background:white;
-            border-radius:10px;
-            padding:14px;
-            text-align:center;
-            box-shadow:0 4px 12px rgba(0,0,0,0.06);
-            transition:0.3s ease;
-        }
-
-        .student-card:hover{
-            transform:translateY(-5px);
-            box-shadow:0 8px 18px rgba(0,0,0,0.12);
-        }
-
-        /* Smaller photo */
-        .student-photo{
-            width:100%;
-            aspect-ratio:1/1;   /* Square for cleaner look */
-            border-radius:8px;
-            overflow:hidden;
-            margin-bottom:10px;
-        }
-
-        .student-name{
-            font-size:0.8rem;
-            padding:6px;
-        }
-
-        .student-card h3{
-            font-size:0.9rem;
-            margin-top:5px;
-        }
-
-        /* ================= FOOTER ================= */
-        footer{
-            text-align:center;
-            padding:20px;
-            background:#9b1c1c;
-            color:white;
-            margin-top:40px;
-            font-size:0.9rem;
-        }
-
-        /* ================= MOBILE ================= */
-        @media(max-width:768px){
-            .main-header{
-                flex-direction:column;
-                text-align:center;
+        /* Mobile */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
             }
 
-            .logo-area img{
-                width:90px;
+            section h2 {
+                font-size: 1.5rem;
             }
 
-            .student-grid{
-                animation-duration:45s;
+            .welcome-text {
+                font-size: 1rem;
+            }
+
+            .tagline {
+                font-size: 0.95rem;
+            }
+            .main-header {
+                flex-direction: column;
+            }
+
+            .logo-area img {
+                width: 90px;
             }
         }
     </style>
@@ -199,15 +283,16 @@ the name of the students are not looking good, the pictures are too big both on 
 <header class="main-header">
 
     <div class="logo-area">
-        <img src="pictures/logo.png" alt="School Logo">
+        <img src="pictures/logo.png" alt="The Vine Montessori Logo">
     </div>
 
     <div class="header-text">
-        <p class="welcome-text">Basic One</p>
+        <p class="welcome-text">Basic Two</p>
         <h1>The Vine Montessori Nursery & Primary School</h1>
-        <p class="tagline">...Where every child is different and celebrated! 🌸</p>
+        <p class ="tagline">...Where every child is different and celebrated!🌸</p>
     </div>
 
+    <!-- Floating decorations -->
     <div class="floating">
         <span>⭐</span>
         <span>✨</span>
@@ -216,7 +301,6 @@ the name of the students are not looking good, the pictures are too big both on 
         <span>✨</span>
         <span>⭐</span>
     </div>
-
 </header>
 
 <section>
@@ -224,77 +308,109 @@ the name of the students are not looking good, the pictures are too big both on 
     <div class="back-home">
         <a href="home.html" class="home-btn">← Back to Home</a>
     </div>
+    <h2>Meet Our Excellent Basic II Students</h2>
 
-    <h2>Meet Our Wonderful Basic I Students</h2>
 
-    <div class="student-scroll">
-        <div class="student-grid">
-
-            <!-- STUDENT CARD -->
-            <a href="eninla.html" class="student-link">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="pictures/eninla.jpg" alt="Eninla">
-                        <span class="student-name">Eninla</span>
-                    </div>
-                    <h3>Eninla</h3>
+    <div class="student-grid">
+        <a href="aliyah.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/aliyah.jpg" alt="Aliyah">
+                    <span class="student-name">Aliyah</span>
                 </div>
-            </a>
+                <h3>Aliyah</h3>
+            </div>
+        </a>
 
-            <a href="fatimah.html" class="student-link">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="pictures/fatimah.jpg" alt="Fatimah">
-                        <span class="student-name">Fatimah</span>
-                    </div>
-                    <h3>Ojapah Fatimah</h3>
+        <a href="eninla.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/eninla.jpg" alt="Eninla">
+                    <span class="student-name">Eninla</span>
                 </div>
-            </a>
-
-            <a href="georgina.html" class="student-link">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="pictures/georgina.jpg" alt="Georgina">
-                        <span class="student-name">Georgina</span>
-                    </div>
-                    <h3>Oketa Georgina</h3>
+                <h3>Eninla</h3>
+            </div>
+        </a>
+        <a href="fatimah.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/fatimah.jpg" alt="Fatimah">
+                    <span class="student-name">Ojapah Fatimah</span>
                 </div>
-            </a>
+                <h3>Ojapah Fatimah</h3>
+            </div>
+        </a>
 
-            <a href="praise.html" class="student-link">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="pictures/praise.jpg" alt="Praise">
-                        <span class="student-name">Praise</span>
-                    </div>
-                    <h3>Adekunle Praise</h3>
+        <a href="praise.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/praise.jpg" alt="Praise>
+                    <span class="student-name">Adekunle Praise</span>
                 </div>
-            </a>
+                <h3>Adekunle Praise</h3>
+            </div>
+        </a>
 
-            <!-- DUPLICATES FOR SMOOTH LOOP -->
-            <a href="eninla.html" class="student-link">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="pictures/eninla.jpg" alt="Eninla">
-                        <span class="student-name">Eninla</span>
-                    </div>
-                    <h3>Eninla</h3>
+        <a href="georgina.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/georgina.jpg" alt="Georgina">
+                    <span class="student-name">Oketa Georgina</span>
                 </div>
-            </a>
+                <h3>Oketa Georgina</h3>
+            </div>
+        </a>
 
-            <a href="fatimah.html" class="student-link">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="pictures/fatimah.jpg" alt="Fatimah">
-                        <span class="student-name">Fatimah</span>
-                    </div>
-                    <h3>Ojapah Fatimah</h3>
+        <a href="aliyah.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/aliyah.jpg" alt="Aliyah">
+                    <span class="student-name">Aliyah</span>
                 </div>
-            </a>
+                <h3>Aliyah</h3>
+            </div>
+        </a>
 
-        </div>
+        <a href="eninla.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/eninla.jpg" alt="Eninla">
+                    <span class="student-name">Eninla</span>
+                </div>
+                <h3>Eninla</h3>
+            </div>
+        </a>
+        <a href="fatimah.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/fatimah.jpg" alt="Fatimah">
+                    <span class="student-name">Ojapah Fatimah</span>
+                </div>
+                <h3>Ojapah Fatimah</h3>
+            </div>
+        </a>
+
+        <a href="praise.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/praise.jpg]" alt="Praise>
+                    <span class="student-name">Adekunle Praise</span>
+                </div>
+                <h3>Adekunle Praise</h3>
+            </div>
+        </a>
+
+        <a href="georgina.html" class="student-link">
+            <div class="student-card">
+                <div class="student-photo">
+                    <img src="pictures/georgina.jpg" alt="Georgina">
+                    <span class="student-name">Oketa Georgina</span>
+                </div>
+                <h3>Oketa Georgina</h3>
+            </div>
+        </a>
+
     </div>
-
 </section>
 
 <footer>
