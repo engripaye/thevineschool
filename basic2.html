@@ -6,275 +6,299 @@
     <title>Basic Two | The Vine Montessori School</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #f7f5f5;
-            color: #333;
+
+        /* GENERAL */
+
+        body{
+            margin:0;
+            font-family:"Segoe UI", Arial, sans-serif;
+            background:#f7f5f5;
+            color:#333;
         }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
+        /* HEADER */
+
+        .main-header{
+            background:linear-gradient(135deg,#9b1c1c,#e53e3e);
+            color:white;
+            padding:35px 30px;
+            display:flex;
+            align-items:center;
+            gap:20px;
+            flex-wrap:wrap;
+            justify-content:center;
         }
 
-        .welcome-text {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.9;
+        .logo-area img{
+            width:110px;
         }
 
-        header h1 {
-            margin: 10px 0;
-            font-size: 2.2rem;
+        .header-text{
+            text-align:center;
         }
 
-        header p {
-            font-size: 1rem;
-            opacity: 0.95;
-            font-style: italic;
+        .welcome-text{
+            font-size:1rem;
+            letter-spacing:2px;
+            text-transform:uppercase;
         }
 
-        /* Section */
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
+        .header-text h1{
+            margin:5px 0;
+            font-size:2rem;
         }
 
-        section h2 {
-            text-align: center;
-            color: #9b1c1c;
-            margin-bottom: 30px;
-            font-size: 1.7rem;
+        .tagline{
+            font-size:1rem;
+            font-style:italic;
         }
 
-        /* Grid */
-        .student-grid {
-            display: flex;
-            gap: 25px;
-            width: max-content;
-            animation: studentScroll 25s linear infinite;
+        /* SECTION */
+
+        section{
+            padding:40px 20px;
+            max-width:1100px;
+            margin:auto;
         }
 
-        section {
-            overflow: hidden;
+        section h2{
+            text-align:center;
+            color:#9b1c1c;
+            margin-bottom:30px;
         }
 
-        section:hover .student-grid {
-            animation-play-state: paused;
-        }
-        .logo-area img {
-            width: 110px;   /* bigger logo */
-            height: auto;
-        }
+        /* STUDENT SLIDER */
 
-        .header-text {
-            flex: 1;
+        .student-container{
+            position:relative;
+            display:flex;
+            align-items:center;
         }
 
-        .welcome-text,
-        .tagline {
-            text-align: center;
-        }
-        .tagline {
-            font-size: 1.05rem;
-            margin-top: 12px;
-            opacity: 0.95;
-            font-style: italic;
-        }
+        /* FADE EDGES */
 
-        .student-card {
-            min-width: 260px;
-            background: white;
-            border-radius: 14px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
-
-        .main-header {
-            background: linear-gradient(135deg, #9b1c1c, #e53e3e);
-            color: white;
-            padding: 35px 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative; /* reduced gap */
-            overflow: hidden;
-        }
-
-        .student-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 18px 30px rgba(0,0,0,0.18);
-        }
-
-
-        .student-photo {
-            position: relative;
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-        .student-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .student-card:hover .student-photo img {
-            transform: scale(1.08);
-        }
-
-        .student-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .student-link:hover .student-card {
-            outline: 2px solid rgba(155, 28, 28, 0.4);
-        }
-
-
-        /* Name overlay */
-        .student-name {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 10px;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-
-        .student-card h3 {
-            margin: 0;
-            font-size: 1.3rem;
-            color: #9b1c1c;
-        }
-
-        .back-home {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .home-btn {
-            display: inline-block;
-            padding: 10px 18px;
-            background: #9b1c1c;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .home-btn:hover {
-            background: #7f1515;
-            transform: translateY(-2px);
-        }
-
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #9b1c1c;
-            color: white;
-            font-size: 0.9rem;
-            margin-top: 40px;
-        }
-
-        @keyframes studentScroll {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-50%);
-            }
-        }
-        /* Floating decorations */
-        .floating{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; /* constrain inside header */
-            pointer-events: none;
-            overflow: hidden;
-
-        }
-
-        .floating span{
+        .student-container::before,
+        .student-container::after{
+            content:"";
             position:absolute;
-            font-size:1.4rem;
-            opacity:0.8;
-            animation: floatUp 8s linear infinite;
+            top:0;
+            width:80px;
+            height:100%;
+            z-index:5;
+            pointer-events:none;
         }
 
-        /* Random positions */
-        .floating span:nth-child(1){ left:10%; animation-delay:0s; }
-        .floating span:nth-child(2){ left:25%; animation-delay:2s; }
-        .floating span:nth-child(3){ left:40%; animation-delay:4s; }
-        .floating span:nth-child(4){ left:60%; animation-delay:1s; }
-        .floating span:nth-child(5){ left:75%; animation-delay:3s; }
-        .floating span:nth-child(6){ left:90%; animation-delay:5s; }
-
-        @keyframes floatUp{
-            0%{
-                bottom:-10%;
-                transform:translateX(0) scale(0.8);
-                opacity:0;
-            }
-            20%{
-                opacity:0.8;
-            }
-            100%{
-                bottom:110%;
-                transform:translateX(-20px) scale(1.1);
-                opacity:0;
-            }
+        .student-container::before{
+            left:0;
+            background:linear-gradient(to right,#f7f5f5,transparent);
         }
 
-
-        /* Mobile */
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            section h2 {
-                font-size: 1.5rem;
-            }
-
-            .welcome-text {
-                font-size: 1rem;
-            }
-
-            .tagline {
-                font-size: 0.95rem;
-            }
-            .main-header {
-                flex-direction: column;
-            }
-
-            .logo-area img {
-                width: 90px;
-            }
+        .student-container::after{
+            right:0;
+            background:linear-gradient(to left,#f7f5f5,transparent);
         }
+
+        /* GRID */
+
+        .student-grid{
+            display:flex;
+            gap:25px;
+            overflow-x:auto;
+            scroll-behavior:smooth;
+            padding:10px;
+            scroll-snap-type:x mandatory;
+        }
+
+        .student-grid::-webkit-scrollbar{
+            display:none;
+        }
+
+        /* CARD */
+
+        .student-card{
+            min-width:260px;
+            background:white;
+            border-radius:14px;
+            padding:30px 20px;
+            text-align:center;
+            box-shadow:0 8px 18px rgba(0,0,0,0.08);
+            transition:all .35s ease;
+            cursor:pointer;
+            scroll-snap-align:start;
+        }
+
+        .student-card:hover{
+            transform:translateY(-10px) scale(1.05);
+            box-shadow:0 20px 35px rgba(0,0,0,0.2);
+        }
+
+        /* PHOTO */
+
+        .student-photo{
+            position:relative;
+            width:100%;
+            height:180px;
+            border-radius:12px;
+            overflow:hidden;
+            margin-bottom:15px;
+        }
+
+        .student-photo img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .student-name{
+            position:absolute;
+            bottom:0;
+            width:100%;
+            padding:10px;
+            background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+            color:white;
+            font-weight:600;
+        }
+
+        /* ARROWS */
+
+        .arrow{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            background:white;
+            border:none;
+            width:48px;
+            height:48px;
+            border-radius:50%;
+            box-shadow:0 6px 14px rgba(0,0,0,0.25);
+            cursor:pointer;
+            font-size:22px;
+            font-weight:bold;
+            z-index:10;
+        }
+
+        .arrow:hover{
+            background:#9b1c1c;
+            color:white;
+        }
+
+        .arrow-left{
+            left:10px;
+        }
+
+        .arrow-right{
+            right:10px;
+        }
+
+        /* BACK BUTTON */
+
+        .back-home{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .home-btn{
+            display:inline-block;
+            padding:10px 18px;
+            background:#9b1c1c;
+            color:white;
+            text-decoration:none;
+            border-radius:25px;
+        }
+
+        .home-btn:hover{
+            background:#7f1515;
+        }
+
+        /* MODAL */
+
+        .modal{
+            display:none;
+            position:fixed;
+            z-index:999;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);
+            justify-content:center;
+            align-items:center;
+        }
+
+        .modal-content{
+            background:white;
+            padding:30px;
+            border-radius:16px;
+            text-align:center;
+            max-width:350px;
+            width:90%;
+            position:relative;
+            animation:popup .3s ease;
+        }
+
+        .modal-content img{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:10px;
+        }
+
+        .close-modal{
+            position:absolute;
+            right:15px;
+            top:10px;
+            font-size:28px;
+            cursor:pointer;
+        }
+
+        .portfolio-btn{
+            display:inline-block;
+            margin-top:10px;
+            padding:10px 18px;
+            background:#9b1c1c;
+            color:white;
+            text-decoration:none;
+            border-radius:20px;
+        }
+
+        @keyframes popup{
+            from{transform:scale(.7);opacity:0}
+            to{transform:scale(1);opacity:1}
+        }
+
+        /* FOOTER */
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#9b1c1c;
+            color:white;
+            margin-top:40px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:600px){
+
+            .main-header{
+                flex-direction:column;
+            }
+
+            .logo-area img{
+                width:90px;
+            }
+
+            .header-text h1{
+                font-size:1.6rem;
+            }
+
+            .arrow{
+                display:none;
+            }
+
+        }
+
     </style>
 </head>
 
@@ -283,139 +307,200 @@
 <header class="main-header">
 
     <div class="logo-area">
-        <img src="pictures/logo.png" alt="The Vine Montessori Logo">
+        <img src="pictures/logo.png">
     </div>
 
     <div class="header-text">
-    <p class="welcome-text">Basic Two</p>
-    <h1>The Vine Montessori Nursery & Primary School</h1>
-    <p class ="tagline">...Where every child is different and celebrated!🌸</p>
+        <p class="welcome-text">Basic Two</p>
+        <h1>The Vine Montessori Nursery & Primary School</h1>
+        <p class="tagline">...Where every child is different and celebrated!</p>
     </div>
 
-    <!-- Floating decorations -->
-    <div class="floating">
-        <span>⭐</span>
-        <span>✨</span>
-        <span>🎓</span>
-        <span>🎈</span>
-        <span>✨</span>
-        <span>⭐</span>
-    </div>
 </header>
 
 <section>
 
     <div class="back-home">
-        <a href="home.html" class="home-btn">← Back to Home</a>
+        <a href="home.html" class="home-btn">← Back Home</a>
     </div>
-    <h2>Meet Our Excellent Basic II Students</h2>
 
+    <h2>Meet Our Excellent Students</h2>
 
-    <div class="student-grid">
-        <a href="aliyah.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/aliyah.jpg" alt="Aliyah">
-                <span class="student-name">Aliyah</span>
-            </div>            
-            <h3>Aliyah</h3>
-        </div>
-    </a>
+    <div class="student-container">
 
-    <a href="darasimi.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/darasimi.jpg" alt="Darasimi">
-                <span class="student-name">Darasimi</span>
-            </div> 
-            <h3>Darasimi</h3>
-        </div>
-    </a>
-        <a href="david.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/david.jpg" alt="David">
-                <span class="student-name">David</span>
-            </div> 
-            <h3>David</h3>
-        </div>
-    </a>
+        <button class="arrow arrow-left" onclick="scrollLeft()">‹</button>
 
-    <a href="dayan.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/dayan.jpg" alt="Dayan">
-                <span class="student-name">Dayan</span>
-            </div> 
-            <h3>Dayan</h3>
-        </div>
-    </a>
+        <div class="student-grid" id="studentSlider">
 
-    <a href="zahra.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/zahrah.jpg" alt="Zahra">
-                <span class="student-name">Zahra</span>
-            </div> 
-            <h3>Zahra</h3>
-        </div>
-    </a>
+            <!-- STUDENT -->
 
-    <a href="aliyah.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/aliyah.jpg" alt="Aliyah">
-                <span class="student-name">Aliyah</span>
-            </div>            
-            <h3>Aliyah</h3>
-        </div>
-    </a>
+            <div class="student-card"
+                 data-name="Aliyah"
+                 data-class="Basic Two Student"
+                 data-intro="Hello! My name is Aliyah. I love reading story books and drawing."
+                 data-photo="pictures/aliyah.jpg"
+                 data-link="aliyah.html">
 
-    <a href="darasimi.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/darasimi.jpg" alt="Darasimi">
-                <span class="student-name">Darasimi</span>
-            </div> 
-            <h3>Darasimi</h3>
-        </div>
-    </a>
-        <a href="david.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/david.jpg" alt="David">
-                <span class="student-name">David</span>
-            </div> 
-            <h3>David</h3>
-        </div>
-    </a>
+                <div class="student-photo">
+                    <img src="pictures/aliyah.jpg">
+                    <span class="student-name">Aliyah</span>
+                </div>
 
-    <a href="dayan.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/dayan.jpg" alt="Dayan">
-                <span class="student-name">Dayan</span>
-            </div> 
-            <h3>Dayan</h3>
-        </div>
-    </a>
+                <h3>Aliyah</h3>
 
-    <a href="zahra.html" class="student-link">
-        <div class="student-card">
-            <div class="student-photo">
-                <img src="pictures/zahrah.jpg" alt="Zahra">
-                <span class="student-name">Zahra</span>
-            </div> 
-            <h3>Zahra</h3>
+            </div>
+
+            <div class="student-card"
+                 data-name="David"
+                 data-class="Basic Two Student"
+                 data-intro="My name is David. I enjoy mathematics and playing football."
+                 data-photo="pictures/david.jpg"
+                 data-link="david.html">
+
+                <div class="student-photo">
+                    <img src="pictures/david.jpg">
+                    <span class="student-name">David</span>
+                </div>
+
+                <h3>David</h3>
+
+            </div>
+
+            <div class="student-card"
+                 data-name="Zahra"
+                 data-class="Basic Two Student"
+                 data-intro="Hello! I love coloring, reading and singing."
+                 data-photo="pictures/zahrah.jpg"
+                 data-link="zahra.html">
+
+                <div class="student-photo">
+                    <img src="pictures/zahrah.jpg">
+                    <span class="student-name">Zahra</span>
+                </div>
+
+                <h3>Zahra</h3>
+
+            </div>
+
+            <div class="student-card"
+                 data-name="Dayan"
+                 data-class="Basic Two Student"
+                 data-intro="Hello! I love coloring, reading and singing."
+                 data-photo="pictures/dayan.jpg"
+                 data-link="zahra.html">
+
+                <div class="student-photo">
+                    <img src="pictures/dayan.jpg">
+                    <span class="student-name">Dayan</span>
+                </div>
+
+                <h3>Dayan</h3>
+
+            </div>
+
+            <div class="student-card"
+                 data-name="Darasimi"
+                 data-class="Basic Two Student"
+                 data-intro="Hello! I love coloring, reading and singing."
+                 data-photo="pictures/zahrah.jpg"
+                 data-link="darasimi.html">
+
+                <div class="student-photo">
+                    <img src="pictures/zahrah.jpg">
+                    <span class="student-name">Darasimi</span>
+                </div>
+
+                <h3>Darasimi</h3>
+
+            </div>
+
         </div>
-    </a>
+
+        <button class="arrow arrow-right" onclick="scrollRight()">›</button>
 
     </div>
+
 </section>
 
+<!-- MODAL -->
+
+<div id="studentModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-modal">&times;</span>
+
+        <img id="modalPhoto">
+
+        <h2 id="modalName"></h2>
+
+        <p id="modalClass"></p>
+
+        <p id="modalIntro"></p>
+
+        <a id="modalLink" class="portfolio-btn">View Full Portfolio</a>
+
+    </div>
+
+</div>
+
 <footer>
-    © 2026 The Vine Montessori School | 🎓 34, Femi Bangebalu Street Command Road, Ipaja, Lagos Nigeria
+
+    © 2026 The Vine Montessori School
+    🎓 34 Femi Bangebalu Street Command Road Ipaja Lagos Nigeria
+
 </footer>
+
+<script>
+
+    /* SLIDER */
+
+    const slider=document.getElementById("studentSlider");
+
+    function scrollLeft(){
+        slider.scrollBy({left:-320,behavior:"smooth"});
+    }
+
+    function scrollRight(){
+        slider.scrollBy({left:320,behavior:"smooth"});
+    }
+
+    /* MODAL */
+
+    const cards=document.querySelectorAll(".student-card");
+    const modal=document.getElementById("studentModal");
+
+    const modalName=document.getElementById("modalName");
+    const modalClass=document.getElementById("modalClass");
+    const modalIntro=document.getElementById("modalIntro");
+    const modalPhoto=document.getElementById("modalPhoto");
+    const modalLink=document.getElementById("modalLink");
+
+    const closeBtn=document.querySelector(".close-modal");
+
+    cards.forEach(card=>{
+        card.addEventListener("click",()=>{
+
+            modal.style.display="flex";
+
+            modalName.textContent=card.dataset.name;
+            modalClass.textContent=card.dataset.class;
+            modalIntro.textContent=card.dataset.intro;
+            modalPhoto.src=card.dataset.photo;
+            modalLink.href=card.dataset.link;
+
+        });
+    });
+
+    closeBtn.onclick=()=>modal.style.display="none";
+
+    window.onclick=(e)=>{
+        if(e.target==modal){
+            modal.style.display="none";
+        }
+    }
+
+</script>
 
 </body>
 </html>
