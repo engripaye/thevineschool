@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <meta name="description" content="The Vine Montessori Nursery and Primary School located in Ipaja Lagos provides quality Montessori education that nurtures creativity, leadership and excellence in children.">
+
+<meta name="keywords" content="Montessori school Lagos, primary school Ipaja, nursery school Lagos, best primary school in Ipaja, The Vine Montessori">
+
+<meta name="author" content="The Vine Montessori School">
+
+<meta property="og:title" content="The Vine Montessori Nursery & Primary School">
+
+<meta property="og:description" content="Where every child is different and celebrated. Quality Montessori education in Ipaja Lagos.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="pictures/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Vine Montessori School</title>
+    <title>The Vine Montessori Nursery & Primary School | Ipaja Lagos</title>
 
     <style>
 
@@ -287,6 +301,88 @@
     .class-link:nth-child(4) .class-card { animation-delay: 0.8s; }
     .class-link:nth-child(5) .class-card { animation-delay: 1s; }
 
+    /* Netflix Style Video Carousel */
+
+.video-section{
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.video-section h2{
+    text-align:center;
+    color:#9b1c1c;
+    margin-bottom:25px;
+}
+
+.video-carousel{
+    position:relative;
+    width:100%;
+    height:450px;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+.video-carousel video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    top:0;
+    left:0;
+    opacity:0;
+    animation:videoSlide 40s infinite;
+}
+
+/* Delay for each video */
+.video-carousel video:nth-child(1){animation-delay:0s;}
+.video-carousel video:nth-child(2){animation-delay:8s;}
+.video-carousel video:nth-child(3){animation-delay:16s;}
+.video-carousel video:nth-child(4){animation-delay:24s;}
+.video-carousel video:nth-child(5){animation-delay:32s;}
+
+@keyframes videoSlide{
+
+0%{
+opacity:0;
+transform:scale(1.05);
+}
+
+5%{
+opacity:1;
+}
+
+20%{
+opacity:1;
+}
+
+25%{
+opacity:0;
+transform:scale(1);
+}
+
+100%{
+opacity:0;
+}
+
+}
+
+/* Mobile responsive */
+
+@media(max-width:768px){
+
+    video-carousel{
+height:80vh;
+border-radius:0;
+}
+
+.video-carousel video{
+object-fit:contain;
+background:black;
+}
+
+}
         /* Mobile tweaks */
         @media (max-width: 480px) {
             header h1 {
@@ -371,6 +467,54 @@
         }
     </style>
 </head>
+
+<script>
+
+    let videos = document.querySelectorAll(".video-carousel video");
+    let currentVideo = 0;
+    let startX = 0;
+    
+    function showVideo(index){
+    
+    videos.forEach(v => v.style.opacity = "0");
+    
+    videos[index].style.opacity = "1";
+    
+    }
+    
+    showVideo(currentVideo);
+    
+    document.querySelector(".video-carousel").addEventListener("touchstart", e=>{
+    startX = e.touches[0].clientX;
+    });
+    
+    document.querySelector(".video-carousel").addEventListener("touchend", e=>{
+    
+    let endX = e.changedTouches[0].clientX;
+    
+    if(startX - endX > 50){
+    
+    currentVideo++;
+    if(currentVideo >= videos.length){
+    currentVideo = 0;
+    }
+    
+    }
+    
+    if(endX - startX > 50){
+    
+    currentVideo--;
+    if(currentVideo < 0){
+    currentVideo = videos.length - 1;
+    }
+    
+    }
+    
+    showVideo(currentVideo);
+    
+    });
+    
+    </script>
 
 <body>
 
@@ -493,20 +637,50 @@
   
     <div class="student-carousel">
       <div class="slides">
-        <img src="pictures/s1.jpg">
-        <img src="pictures/s2.jpg">
-        <img src="pictures/s3.jpg">
-        <img src="pictures/s4.jpg">
-        <img src="pictures/s5.jpg">
-        <img src="pictures/s6.jpg">
-        <img src="pictures/s7.jpg">
-        <img src="pictures/s8.jpg">
-        <img src="pictures/s9.jpg">
-        <img src="pictures/s10.jpg">
+        <img src="pictures/s1.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s2.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s3.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s4.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s5.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s6.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s7.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s8.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s9.jpg" alt="Student of The Vine Montessori School Lagos">
+        <img src="pictures/s10.jpg" alt="Student of The Vine Montessori School Lagos">
       </div>
     </div>
 
   </section>
+
+  <section class="video-section">
+
+    <h2>School Activities 🎥</h2>
+    
+    <div class="video-carousel">
+    
+    <video autoplay muted loop playsinline>
+    <source src="videos/v1.mp4" type="video/mp4" >
+    </video>
+    
+    <video autoplay muted loop playsinline>
+    <source src="videos/v2.mp4" type="video/mp4">
+    </video>
+    
+    <video autoplay muted loop playsinline>
+    <source src="videos/v3.mp4" type="video/mp4">
+    </video>
+    
+    <video autoplay muted loop playsinline>
+    <source src="videos/v4.mp4" type="video/mp4">
+    </video>
+    
+    <video autoplay muted loop playsinline>
+    <source src="videos/v5.mp4" type="video/mp4">
+    </video>
+    
+    </div>
+    
+    </section>
   
 
 
