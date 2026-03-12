@@ -335,6 +335,72 @@
     animation:videoSlide 40s infinite;
 }
 
+
+            /* School Events Gallery */
+
+            .events-section{
+                max-width:1200px;
+                margin:70px auto;
+                padding:0 20px;
+            }
+
+            .events-section h2{
+                text-align:center;
+                color:#9b1c1c;
+                margin-bottom:30px;
+            }
+
+            .events-grid{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+                gap:18px;
+            }
+
+            .events-grid img{
+                width:100%;
+                height:200px;
+                object-fit:cover;
+                border-radius:12px;
+                cursor:pointer;
+                transition:transform .3s ease, box-shadow .3s ease;
+            }
+
+            .events-grid img:hover{
+                transform:scale(1.05);
+                box-shadow:0 10px 25px rgba(0,0,0,0.2);
+            }
+
+            /* Lightbox Viewer */
+
+            .lightbox{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background:rgba(0,0,0,0.9);
+                display:none;
+                align-items:center;
+                justify-content:center;
+                z-index:999;
+            }
+
+            .lightbox img{
+                max-width:90%;
+                max-height:85%;
+                border-radius:10px;
+            }
+
+            .lightbox span{
+                position:absolute;
+                top:25px;
+                right:40px;
+                color:white;
+                font-size:35px;
+                cursor:pointer;
+            }
+
+
 /* Delay for each video */
 .video-carousel video:nth-child(1){animation-delay:0s;}
 .video-carousel video:nth-child(2){animation-delay:8s;}
@@ -367,6 +433,8 @@ opacity:0;
 }
 
 }
+
+
 
 /* Mobile responsive */
 
@@ -466,6 +534,16 @@ background:red;
                 height: 180px;
             }
         }
+
+            /* Mobile */
+
+            @media(max-width:600px){
+
+                .events-grid img{
+                    height:160px;
+                }
+
+            }
     </style>
 </head>
 
@@ -513,6 +591,33 @@ background:red;
     
     showVideo(currentVideo);
     
+    });
+
+    const galleryImages = document.querySelectorAll(".events-grid img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    galleryImages.forEach(img => {
+
+        img.addEventListener("click", () => {
+
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+
+        });
+
+    });
+
+    function closeLightbox(){
+        lightbox.style.display = "none";
+    }
+
+    lightbox.addEventListener("click", e => {
+
+        if(e.target !== lightboxImg){
+            closeLightbox();
+        }
+
     });
     
     </script>
