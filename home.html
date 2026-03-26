@@ -464,6 +464,44 @@ opacity:0;
             }
 
 
+            /* ✨ Fancy Section Headings */
+            .section-title{
+                text-align:center;
+                font-size:2.2rem;
+                font-weight:800;
+                margin-bottom:30px;
+                position:relative;
+                display:inline-block;
+                padding-bottom:10px;
+                color:#9b1c1c;
+                letter-spacing:1px;
+            }
+
+            /* Gradient text effect */
+            .section-title span{
+                background: linear-gradient(45deg, #e53e3e, #ff9a9e);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            /* Decorative underline */
+            .section-title::after{
+                content:"";
+                width:60%;
+                height:4px;
+                background: linear-gradient(to right, #e53e3e, transparent);
+                position:absolute;
+                left:20%;
+                bottom:0;
+                border-radius:10px;
+            }
+
+            /* Animation */
+            .section-title{
+                animation: fadeUp 0.8s ease;
+            }
+
+
 
 
 /* Mobile responsive */
@@ -584,6 +622,10 @@ background:red;
                     height:300px;
                 }
 
+                .section-title{
+                    font-size:1.6rem;
+                }
+
             }
     </style>
 </head>
@@ -690,7 +732,7 @@ background:red;
     
 
 <section>
-    <h2>Our Primary Classes</h2>
+    <h2 class="section-title">📘 <span>Our Primary Classes</span></h2>
 
     <div class="class-grid">
 
@@ -780,7 +822,7 @@ background:red;
     </div>
 </section>
 <section class="students-section">
-    <h2>Our Amazing Students</h2>
+    <h2 class="section-title">📘 <span>Our Primary Classes</span></h2>
   
     <div class="student-carousel">
       <div class="slides">
@@ -801,7 +843,7 @@ background:red;
 
   <section class="video-section">
 
-    <h2>School Activities 🎥</h2>
+      <h2 class="section-title">🌟 <span>Our Amazing Students</span></h2>
     
     <div class="video-carousel">
     
@@ -831,7 +873,8 @@ background:red;
 
     <section class="events-section">
 
-        <h2>Spelling Bee Competition 🎉</h2>
+        <h2 class="section-title">🏆 <span>Spelling Bee Competition</span></h2>
+
 
         <div class="events-grid">
 
@@ -856,7 +899,7 @@ background:red;
 
     <section class="map-section">
 
-        <h2>Find Our School 📍</h2>
+        <h2 class="section-title">📍 <span>Find Our School</span></h2>
 
         <div class="map-container">
 
